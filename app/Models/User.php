@@ -22,22 +22,14 @@ class User extends Authenticatable
         'lname',
         'mname',
         'religion',
-        'gender',
         'civilstatus',
         'gender',
         'birthdate',
         'address',
         'contactno',
-        'emergencycontact',
-        'com_tax_number',
-        'tin',
-        'gsis',
-        'sss',
-        'occupation',
         'email',
-        'email_verified_at',
         'password',
-        'roles'
+        'roles',
     ];
 
     /**

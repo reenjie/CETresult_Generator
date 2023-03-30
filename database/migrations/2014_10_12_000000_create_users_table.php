@@ -24,12 +24,6 @@ return new class extends Migration
             $table->date('birthdate');
             $table->text('address');
             $table->string('contactno');
-            $table->string('emergencycontact');
-            $table->string('com_tax_number')->nullable();
-            $table->string('tin')->nullable();
-            $table->string('gsis')->nullable();
-            $table->string('sss')->nullable();
-            $table->string('occupation')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

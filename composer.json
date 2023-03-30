@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.1",
         "league/oauth2-google": "^4.0",
+        "nuovo/spreadsheet-reader": "^0.5.11",
         "phpmailer/phpmailer": "^6.6",
         "phpoffice/phpword": "^1.0"
     },

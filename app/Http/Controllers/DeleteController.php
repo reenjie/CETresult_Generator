@@ -4,19 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\URequest;
+use App\Models\Listpasser;
 class DeleteController extends Controller
 {
     public function delete(Request $request){
 
         switch ($request->type) {
-            case 'users':
-                User::findorFail($request->id)->delete();
+            case 'passer':
+                Listpasser::findorFail($request->id)->delete();
             break;
 
-            case 'request':
-                URequest::findorFail($request->id)->delete();
-            break;
             
           
         }

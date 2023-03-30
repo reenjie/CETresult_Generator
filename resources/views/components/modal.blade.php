@@ -21,22 +21,15 @@
         <div class="modal-body" >
           @if(Auth::check())
           @switch($type)
-              @case('adduser')
-                  @include('components.modalcontents.adduser')
+              @case('addpasser')
+                  @include('components.modalcontents.addpasser')
               @break 
 
-              @case('edituser')
-              @include('components.modalcontents.edituser')
-             @break 
-              @case('clearance') 
-              @include('components.modalcontents.clearance')
+              @case('importdata')
+              @include('components.modalcontents.importlist')
               @break
-              @case('barangayid')
-              @include('components.modalcontents.barangayid')
-              @break
-              @case('certificate')
-              @include('components.modalcontents.certificate')
-              @break
+
+            
 
           @endswitch
           @endif

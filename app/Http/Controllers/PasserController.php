@@ -42,6 +42,7 @@ class PasserController extends Controller
   {
     try {
       $file = $request->file('file');
+      $year = $request->year;
 
       if ($file->move(public_path('temp'), $file->getClientOriginalName())) {
         $targetDirectory = public_path('temp') . '/' . $file->getClientOriginalName();
@@ -98,6 +99,7 @@ class PasserController extends Controller
             unlink($targetDirectory);
             return redirect()->back()->with('error', 'Theres a problem with importing , Some files were imported some were not. \n Please follow the right format of a file. \n Example : \n Application no | Name | School | Ratings | Status');
           }
+
           $check = Listpasser::where('appno', $appno);
 
           if (count($check->get()) >= 1) {
@@ -108,7 +110,7 @@ class PasserController extends Controller
               'school' => $school,
               'rating' => '',
               'status' => '',
-              'year'   => ''
+              'year'   => $year
             ]);
           }
         }

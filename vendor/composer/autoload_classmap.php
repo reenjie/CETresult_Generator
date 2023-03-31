@@ -38,7 +38,7 @@ return array(
     'App\\Http\\Requests\\ProfileRequest' => $baseDir . '/app/Http/Requests/ProfileRequest.php',
     'App\\Http\\Requests\\UserRequest' => $baseDir . '/app/Http/Requests/UserRequest.php',
     'App\\Models\\Listpasser' => $baseDir . '/app/Models/Listpasser.php',
-    'App\\Models\\URequest' => $baseDir . '/app/Models/URequest.php',
+    'App\\Models\\Urequest' => $baseDir . '/app/Models/Urequest.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

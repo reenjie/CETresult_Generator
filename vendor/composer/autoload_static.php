@@ -588,7 +588,7 @@ class ComposerStaticInitae96b5e734ffc60043a503cc3bc2c454
         'App\\Http\\Requests\\ProfileRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileRequest.php',
         'App\\Http\\Requests\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserRequest.php',
         'App\\Models\\Listpasser' => __DIR__ . '/../..' . '/app/Models/Listpasser.php',
-        'App\\Models\\URequest' => __DIR__ . '/../..' . '/app/Models/URequest.php',
+        'App\\Models\\Urequest' => __DIR__ . '/../..' . '/app/Models/Urequest.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

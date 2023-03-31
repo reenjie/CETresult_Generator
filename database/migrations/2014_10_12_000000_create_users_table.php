@@ -28,6 +28,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('roles')->comment('0->admin, 1->user');
+            $table->integer('request')->comment('1-> pending , 2->approved');
+            $table->text('application');
             $table->rememberToken();
             $table->timestamps();
         });

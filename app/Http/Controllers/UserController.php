@@ -47,7 +47,10 @@ class UserController extends Controller
                 'email' => $email,
                 'email_verified_at' => now(),
                 'password' => Hash::make($pass),
-                'roles' => 0
+                'roles' => 0,
+                'request' => 0,
+                'application' => ''
+
             ]);
             return redirect()->back()->with('success', 'User Saved Successfully!');
         } catch (\Throwable $th) {
@@ -89,7 +92,9 @@ class UserController extends Controller
             'email' => $email,
             'email_verified_at' => null,
             'password' => Hash::make($password),
-            'roles' => 1
+            'roles' => 1,
+            'request' => 0,
+            'application' => ''
         ]);
 
         if ($save) {

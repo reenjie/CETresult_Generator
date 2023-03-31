@@ -66,25 +66,14 @@
   ])
 
   @include('components.modal', [
-  'id' =>"clearance",
+  'id' =>"approved",
   'modalsize' => 'modal-lg',
-  'modaltitle' => 'Make a Request | Barangay Clearance',
-  'type' => 'clearance',
+  'modaltitle' => 'Approved Request',
+  'type' => 'approved',
   ])
 
-  @include('components.modal', [
-  'id' =>"barangayid",
-  'modalsize' => 'modal-lg',
-  'modaltitle' => 'Make a Request | Barangay ID',
-  'type' => 'barangayid',
-  ])
 
-  @include('components.modal', [
-  'id' =>"certificate",
-  'modalsize' => 'modal-lg',
-  'modaltitle' => 'Make a Request | Barangay Certificate',
-  'type' => 'certificate',
-  ])
+
 </body>
 <!--   Core JS Files   -->
 <script src="{{ asset('light-bootstrap/js/core/jquery.3.2.1.min.js') }}" type="text/javascript"></script>
@@ -116,7 +105,8 @@
 
     // $('.table').DataTable();
     $('#table1').DataTable();
-  
+    $('#table0').DataTable();
+
 
 
     $('#facebook').sharrre({

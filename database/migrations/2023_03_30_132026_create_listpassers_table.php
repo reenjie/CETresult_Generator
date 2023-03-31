@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('appno');
             $table->string('name');
             $table->text('school');
+            $table->text('rating');
+            $table->text('status');
+            $table->text('year');
             $table->timestamps();
         });
     }

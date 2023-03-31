@@ -122,7 +122,9 @@
                 <a href="#">School Year 2023-2024</a>
             </div>
         </div>
+        <a href="/login"><i class="fa fa-fw fa-share"></i> Request</a>
         <a href="/login"><i class="fa fa-fw fa-sign-in"></i> Login</a>
+
     </div>
 
     </div>

@@ -3,13 +3,22 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'cf251a34d4f33de5bfd0e0e7ddfe2b0cbeb8397e',
+        'reference' => '0a98312848daa8afbf6b9fdb15bc16acb7bade3d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'box/spout' => array(
+            'pretty_version' => 'v3.3.0',
+            'version' => '3.3.0.0',
+            'reference' => '9bdb027d312b732515b884a341c0ad70372c6295',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../box/spout',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.11.0',
             'version' => '0.11.0.0',
@@ -394,7 +403,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'cf251a34d4f33de5bfd0e0e7ddfe2b0cbeb8397e',
+            'reference' => '0a98312848daa8afbf6b9fdb15bc16acb7bade3d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

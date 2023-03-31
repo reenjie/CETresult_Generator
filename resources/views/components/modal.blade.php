@@ -29,6 +29,17 @@
         @include('components.modalcontents.importlist')
         @break
 
+        @case('adduser')
+        @include('components.modalcontents.adduser')
+        @break
+
+        @case('edituser')
+        @include('components.modalcontents.edituser')
+        @break
+
+        @case('approved')
+        @include('components.modalcontents.approved')
+        @break;
 
 
         @endswitch

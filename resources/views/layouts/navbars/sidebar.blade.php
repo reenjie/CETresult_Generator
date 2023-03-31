@@ -37,8 +37,8 @@ Tip 2: you can also add an image using data-image tag
                     <p style="text-transform:capitalize">{{ __("Web Users") }}</p>
                 </a>
             </li>
-            <li class="nav-item @if($activePage == 'usermanagement') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'usermanagement')}}">
+            <li class="nav-item @if($activePage == 'users') active @endif">
+                <a class="nav-link" href="{{route('page.index', 'users')}}">
                     <i class="fas fa-users-cog" style="font-size: 20px;"></i>
                     <p style="text-transform:capitalize">{{ __("User Management") }}</p>
                 </a>

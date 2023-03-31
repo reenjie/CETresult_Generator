@@ -48,14 +48,14 @@ Tip 2: you can also add an image using data-image tag
             @endif
 
             @if(Auth::user()->roles == 1)
-            <li class="nav-item @if($activePage == 'profiling') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'profiling')}}">
+            <li class="nav-item @if($activePage == 'myrequest') active @endif">
+                <a class="nav-link" href="{{route('page.index', 'myrequest')}}">
                     <i class="fas fa-sync" style="font-size: 20px;"></i>
                     <p style="text-transform:capitalize">{{ __("My Request") }}</p>
                 </a>
             </li>
-            <li class="nav-item @if($activePage == 'profiling') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'profiling')}}">
+            <li class="nav-item @if($activePage == 'myresult') active @endif">
+                <a class="nav-link" href="{{route('page.index', 'myresult')}}">
                     <i class="fas fa-list" style="font-size: 20px;"></i>
                     <p style="text-transform:capitalize">{{ __("My Result") }}</p>
                 </a>

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('userID');
             $table->string('application');
             $table->string('year');
-            $table->integer('status')->comment('0->pending , 1->approved');
+            $table->integer('status')->comment('0->pending , 1->approved , 2 -> declined');
             $table->timestamps();
         });
     }

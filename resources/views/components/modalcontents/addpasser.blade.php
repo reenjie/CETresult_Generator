@@ -17,14 +17,15 @@
 
         <h6>Status</h6>
 
-        <select name="" class="form-control mb-3" name="status" id="">
-            <option value="PASSED">PASSED</option>
+        <select class="form-control mb-3" name="status" id="">
+            <option value="passed">PASSED</option>
+            <option value="failed">FAILED</option>
         </select>
 
 
         <h6>Year</h6>
 
-        <select name="year" class="form-control mb-3" name="status" id="">
+        <select name="year" class="form-control mb-3" id="">
             @php
             $currentYear = date('Y');
             @endphp

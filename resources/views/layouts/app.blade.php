@@ -68,7 +68,7 @@
   @include('components.modal', [
   'id' =>"approved",
   'modalsize' => 'modal-lg',
-  'modaltitle' => 'Approved Request',
+  'modaltitle' => 'All Request',
   'type' => 'approved',
   ])
 

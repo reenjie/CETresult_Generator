@@ -22,13 +22,9 @@ Auth::routes();
 
 Route::post('registerUser', [App\Http\Controllers\UserController::class, 'registerUser'])->name('registerUser');
 Route::post('updatemyaccount', [App\Http\Controllers\UserController::class, 'updatemyaccount'])->name('updatemyaccount');
-
-Route::post('saveclearanceRequest', [App\Http\Controllers\URequestController::class, 'saveclearanceRequest'])->name('saveclearanceRequest');
-Route::post('saveidRequest', [App\Http\Controllers\URequestController::class, 'saveidRequest'])->name('saveidRequest');
-Route::post('savecertificateRequest', [App\Http\Controllers\URequestController::class, 'savecertificateRequest'])->name('savecertificateRequest');
-Route::get('changestatus', [App\Http\Controllers\URequestController::class, 'changestatus'])->name('changestatus');
-Route::post('downloadfile', [App\Http\Controllers\URequestController::class, 'downloadfile'])->name('downloadfile');
-
+Route::get('updateentities','App\Http\Controllers\EditController@updateAllWritten')->name('updateentities');
+Route::post('savepasser',[App\Http\Controllers\PasserController::class, 'savepasser'])->name('savePasser');
+Route::post('importlist',[App\Http\Controllers\PasserController::class, 'importlist'])->name('importlist');
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('dashboard');
 Route::post('saveuser', 'App\Http\Controllers\UserController@storeadmin')->name('saveuser');
 Route::get('deleteitems', 'App\Http\Controllers\DeleteController@delete')->name('deleteItems');

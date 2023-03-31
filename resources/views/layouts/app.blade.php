@@ -49,7 +49,7 @@
     </div>
 
   </div>
-
+  @include('components.alerts')
   @include('components.modal', [
   'id' =>"addaccount",
   'modalsize' => '',
@@ -115,11 +115,8 @@
   $(document).ready(function() {
 
     // $('.table').DataTable();
-    $('#table0').DataTable();
     $('#table1').DataTable();
-    $('#table2').DataTable();
-    $('#table3').DataTable();
-    $('#table4').DataTable();
+  
 
 
     $('#facebook').sharrre({

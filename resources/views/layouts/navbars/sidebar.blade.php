@@ -25,20 +25,20 @@ Tip 2: you can also add an image using data-image tag
                     <p style="text-transform:capitalize">{{ __("Dashboard") }}</p>
                 </a>
             </li>
-            <li class="nav-item @if($activePage == 'profiling') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'profiling')}}">
+            <li class="nav-item @if($activePage == 'listofpasser') active @endif">
+                <a class="nav-link" href="{{route('page.index', 'listofpasser')}}">
                     <i class="fas fa-check-circle" style="font-size: 20px;"></i>
                     <p style="text-transform:capitalize">{{ __("List of Passer") }}</p>
                 </a>
             </li>
-            <li class="nav-item @if($activePage == 'profiling') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'profiling')}}">
+            <li class="nav-item @if($activePage == 'webusers') active @endif">
+                <a class="nav-link" href="{{route('page.index', 'webusers')}}">
                     <i class="fas fa-users" style="font-size: 20px;"></i>
                     <p style="text-transform:capitalize">{{ __("Web Users") }}</p>
                 </a>
             </li>
-            <li class="nav-item @if($activePage == 'profiling') active @endif">
-                <a class="nav-link" href="{{route('page.index', 'profiling')}}">
+            <li class="nav-item @if($activePage == 'usermanagement') active @endif">
+                <a class="nav-link" href="{{route('page.index', 'usermanagement')}}">
                     <i class="fas fa-users-cog" style="font-size: 20px;"></i>
                     <p style="text-transform:capitalize">{{ __("User Management") }}</p>
                 </a>

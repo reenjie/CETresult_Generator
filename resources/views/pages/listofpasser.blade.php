@@ -19,6 +19,8 @@
           <th scope="col">Application No.</th>
           <th scope="col">Name</th>
           <th scope="col">School</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -35,6 +37,18 @@
           </td>
           <td>
             <textarea name="" style="border:none;" data-table="listpassers" data-entity="school" data-id="{{$item->id}}" class="form-control updateonmove" id="" cols="10" rows="10">{{$item->school}}</textarea>
+          </td>
+          <td>
+            <textarea name="" style="border:none;" data-table="listpassers" data-entity="rating" data-id="{{$item->id}}" class="form-control updateonmove" id="" cols="10" rows="10">{{$item->rating}}</textarea>
+          </td>
+          <td>
+
+
+            <select name="" id="" data-table="listpassers" data-entity="status" data-id="{{$item->id}}" class=" updateonmove">
+              <option value="{{$item->status }}">{{$item->status}}</option>
+              <option value="passed">passed</option>
+              <option value="failed">failed</option>
+            </select>
           </td>
           <td>
 

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+Route::get('ViewPass', function (Request $request) {
+	$year = $request->Year;
+	$data = DB::select('SELECT * FROM `listpassers` where year = ' . $year . ' ');
+	$upyear = $year . ' - ' . $year + 1;
+	return view('viewlist', compact('data', 'upyear'));
+})->name('ViewPass');
+Route::get('sendSchedule', [App\Http\Controllers\MailController::class, 'sendSchedule'])->name('mail.sendSchedule');
 
 Route::post('saverequest', [App\Http\Controllers\UrequestController::class, 'saverequest'])->name('saverequest');
 Route::get('changestatus', [App\Http\Controllers\UrequestController::class, 'changestatus'])->name('changestatus');

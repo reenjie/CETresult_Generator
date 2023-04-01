@@ -13,6 +13,7 @@ class Urequest extends Model
         'userID',
         'application',
         'year',
-        'status'
+        'status',
+        'schedule'
     ];
 }

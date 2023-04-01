@@ -73,6 +73,19 @@
   ])
 
 
+  @include('components.modal', [
+  'id' =>"approve",
+  'modalsize' => '',
+  'modaltitle' => 'Approve User',
+  'type' => 'approve',
+  ])
+
+
+
+
+
+
+
 
 </body>
 <!--   Core JS Files   -->

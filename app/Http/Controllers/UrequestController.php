@@ -12,12 +12,21 @@ class UrequestController extends Controller
     {
         $id = $request->id;
         $type = $request->type;
+        $email    = $request->email;
+        $username = $request->username;
+
 
         if ($type == 'approve') {
+            $schedule = $request->schedule;
+
+
             Urequest::findorFail($id)->update([
-                'status' => 1
+                'status' => 1,
+                'schedule' => $schedule
             ]);
-            return redirect()->back()->with('success', 'Approved Successfully!');
+            //return redirect()->back()->with('success', 'Approved Successfully!');
+
+            return redirect()->route('mail.sendSchedule', ["schedule" => $schedule, "email" => $email, "username" => $username]);
         }
 
         if ($type == 'decline') {

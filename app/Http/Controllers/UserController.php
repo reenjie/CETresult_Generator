@@ -59,46 +59,50 @@ class UserController extends Controller
 
     public function registerUser(Request $request)
     {
-        $lname = strtoupper($request->lname);
-        $fname = strtoupper($request->fname);
-        $mname = strtoupper($request->mname);
-        $religion = strtoupper($request->religion);
-        $gender = strtoupper($request->gender);
-        $civilstatus = strtoupper($request->civilstatus);
-        $Bdate = $request->Bdate;
-        $email = $request->email;
-        $password = $request->password;
-        $address = strtoupper($request->address);
-        $contactno = $request->contactno;
-        $econtactno = $request->contactno;
-        $ctn = $request->ctn;
-        $tin = $request->tin;
-        $gsis = $request->gsis;
-        $sss = $request->sss;
-        $occupation = strtoupper($request->occupation);
+        try {
+            $lname = strtoupper($request->lname);
+            $fname = strtoupper($request->fname);
+            $mname = strtoupper($request->mname);
+            $religion = strtoupper($request->religion);
+            $gender = strtoupper($request->gender);
+            $civilstatus = strtoupper($request->civilstatus);
+            $Bdate = $request->Bdate;
+            $email = $request->email;
+            $password = $request->password;
+            $address = strtoupper($request->address);
+            $contactno = $request->contactno;
+            $econtactno = $request->contactno;
+            $ctn = $request->ctn;
+            $tin = $request->tin;
+            $gsis = $request->gsis;
+            $sss = $request->sss;
+            $occupation = strtoupper($request->occupation);
 
 
-        $save = User::create([
-            'fname' => $fname,
-            'lname' => $lname,
-            'mname' => $mname,
-            'religion' => $religion,
-            'civilstatus' => $civilstatus,
-            'gender' => $gender,
-            'birthdate' => date('Y-m-d', strtotime($Bdate)),
-            'address' => $address,
-            'contactno' => $contactno,
-            'email' => $email,
-            'email_verified_at' => null,
-            'password' => Hash::make($password),
-            'roles' => 1,
+            $save = User::create([
+                'fname' => $fname,
+                'lname' => $lname,
+                'mname' => $mname,
+                'religion' => $religion,
+                'civilstatus' => $civilstatus,
+                'gender' => $gender,
+                'birthdate' => date('Y-m-d', strtotime($Bdate)),
+                'address' => $address,
+                'contactno' => $contactno,
+                'email' => $email,
+                'email_verified_at' => null,
+                'password' => Hash::make($password),
+                'roles' => 1,
 
-        ]);
+            ]);
 
-        if ($save) {
-            if (Auth::attempt(['email' => $email, 'password' => $password])) {
-                return redirect()->route('dashboard');
+            if ($save) {
+                if (Auth::attempt(['email' => $email, 'password' => $password])) {
+                    return redirect()->route('dashboard');
+                }
             }
+        } catch (\Throwable $th) {
+            return redirect()->route('login');
         }
     }
 

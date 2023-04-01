@@ -54,7 +54,7 @@
                                 @if(count($validate) == 0)
                                 <button class="btn btn-light bg-secondary text-light btn-sm px-3" disabled style="cursor:not-allowed">approve</button>
                                 @else
-                                <button data-id="{{$item->id}}" class="btn btn-light bg-success btnapprove text-light btn-sm px-3">approve</button>
+                                <button data-id="{{$item->id}}" data-email="{{$user[0]->email}}" data-name="{{$user[0]->fname.' '.$user[0]->lname}}" data-toggle="modal" data-target="#approve" class="btn btn-light bg-success btnapprove text-light btn-sm px-3">approve</button>
                                 @endif
 
                                 <button data-id="{{$item->id}}" class="btn btn-light bg-danger text-light btn-sm px-3 btndecline" style="margin-left:5px">Decline</button>
@@ -74,19 +74,24 @@
 <script>
     $('.btnapprove').click(function() {
         var id = $(this).data('id');
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You want to approve this request?",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, Approve it!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = '{{ route("changestatus") }}?type=approve&id=' + id;
-            }
-        })
+        var email = $(this).data('email');
+        var name = $(this).data('name');
+        $('#appid').val(id);
+        $('#useremail').val(email);
+        $('#username').val(name);
+        // Swal.fire({
+        //     title: 'Are you sure?',
+        //     text: "You want to approve this request?",
+        //     icon: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     confirmButtonText: 'Yes, Approve it!'
+        // }).then((result) => {
+        //     if (result.isConfirmed) {
+        //         window.location.href = '{{ route("changestatus") }}?type=approve&id=' + id;
+        //     }
+        // })
 
 
     })

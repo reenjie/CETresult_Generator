@@ -41,6 +41,9 @@
         @include('components.modalcontents.approved')
         @break;
 
+        @case('approve')
+        @include('components.modalcontents.approveprompt')
+        @break;
 
         @endswitch
         @endif

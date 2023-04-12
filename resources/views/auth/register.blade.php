@@ -7,110 +7,74 @@
 <div class=" register-page section-image">
     <div class="content">
         <div class="container">
-            <div class=" mt-5">
-                <div class="card-header" style="background-color: #DF2E38;padding:50px">
-                    <button class="btn btn-light text-light border border-light btn-sm" style="float:left" onclick="window.location.href='{{route('login')}}' "> Back to Login</button>
-                    <img src="https://th.bing.com/th/id/R.5513cd2957a47cc316b1c8696e0bd5d6?rik=%2fnP%2bYG1kfgFycw&riu=http%3a%2f%2f3.bp.blogspot.com%2f-a1cqTunmh4M%2fTgzKp3hFl5I%2fAAAAAAAAAig%2fyCYIlCoJmj0%2fs1600%2fSlide47.JPG&ehk=6xljpsfhRuyvgvPV97CD0lkREBTUKsQvY66MWl72jsg%3d&risl=&pid=ImgRaw&r=0" style="width:100px;float: right;" alt="">
-
-                    <h4 class="text-light text-center">WMSU CET REsult Generator | Registration</h4>
-
-
-
-                </div>
-                <div class="card-body">
-                    <form action="{{route('registerUser')}}" method="post">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-4 mb-2">
-                                <h5>
-                                    Last Name
-                                </h5>
-                                <input type="text mb-2" style="text-transform:uppercase" required name="lname" class="form-control">
+           <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class=" mt-5">
+                    <div class="card-header" style="background-color: #DF2E38;padding:50px">
+                        <button class="btn btn-light text-light border border-light btn-sm" style="float:left" onclick="window.location.href='{{route('login')}}' "> Back to Login</button>
+                        <img src="https://th.bing.com/th/id/R.5513cd2957a47cc316b1c8696e0bd5d6?rik=%2fnP%2bYG1kfgFycw&riu=http%3a%2f%2f3.bp.blogspot.com%2f-a1cqTunmh4M%2fTgzKp3hFl5I%2fAAAAAAAAAig%2fyCYIlCoJmj0%2fs1600%2fSlide47.JPG&ehk=6xljpsfhRuyvgvPV97CD0lkREBTUKsQvY66MWl72jsg%3d&risl=&pid=ImgRaw&r=0" style="width:100px;float: right;" alt="">
+    
+                        <h4 class="text-light text-center">WMSU CET REsult Generator | Registration</h4>
+    
+    
+    
+                    </div>
+                    <div class="card-body">
+                        <form action="{{route('registerUser')}}" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-4 mb-2">
+                                    <h5>
+                                        Last Name
+                                    </h5>
+                                    <input type="text mb-2" style="text-transform:uppercase" required name="lname" class="form-control">
+                                </div>
+                                <div class="col-md-4 mb-2">
+                                    <h5>
+                                        First Name
+                                    </h5>
+                                    <input type="text" style="text-transform:uppercase" required name="fname" class="form-control">
+                                </div>
+                                <div class="col-md-4 mb-2">
+                                    <h5>
+                                        Middle Name
+                                    </h5>
+                                    <input type="text" style="text-transform:uppercase" required name="mname" class="form-control">
+                                </div>
+    
+                              
+    
+    
+                                <div class="col-md-6 mb-2">
+                                    <h5>
+                                        Contact Number
+                                    </h5>
+                                    <input type="text" required name="contactno" class="form-control">
+                                </div>
+                                <div class="col-md-6"></div>
+                                <div class="col-md-6 mb-2">
+                                    <h5>
+                                        Email
+                                    </h5>
+                                    <input type="email" required name="email" class="form-control">
+                                </div>
+                                <div class="col-md-6 mb-2">
+                                    <h5>
+                                        Password
+                                    </h5>
+                                    <input type="password" name="password" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-danger px-5 mt-4" type="submit" style="float:right">Register <i class="fas fa-check-circle"></i></button>
+                                </div>
                             </div>
-                            <div class="col-md-4 mb-2">
-                                <h5>
-                                    First Name
-                                </h5>
-                                <input type="text" style="text-transform:uppercase" required name="fname" class="form-control">
-                            </div>
-                            <div class="col-md-4 mb-2">
-                                <h5>
-                                    Middle Name
-                                </h5>
-                                <input type="text" style="text-transform:uppercase" required name="mname" class="form-control">
-                            </div>
-
-                            <div class="col-md-4 mb-2">
-                                <h5>
-                                    Religion
-                                </h5>
-                                <input type="text" style="text-transform:uppercase" required name="religion" class="form-control">
-                            </div>
-
-                            <div class="col-md-8 mb-2">
-                                <h5>
-                                    Gender
-                                </h5>
-                                <select name="gender" style="text-transform:uppercase" required class="form-control" id="">
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-2">
-                                <h5>
-                                    Civil Status
-                                </h5>
-                                <select name="civilstatus" style="text-transform:uppercase" required class="form-control" id="">
-                                    <option value="Single">Single</option>
-                                    <option value="Married">Married</option>
-                                    <option value="Widdowed">Widdowed</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-6 mb-2">
-                                <h5>
-                                    Birth-Date
-                                </h5>
-                                <input type="date" required name="Bdate" class="form-control">
-                            </div>
-
-
-
-
-                            <div class="col-md-8 mb-2">
-                                <h5>
-                                    Address
-                                </h5>
-                                <textarea name="address" style="text-transform:uppercase" required class="form-control" id="" cols="5" rows="8"></textarea>
-                            </div>
-
-
-                            <div class="col-md-4 mb-2">
-                                <h5>
-                                    Contact Number
-                                </h5>
-                                <input type="text" required name="contactno" class="form-control">
-                            </div>
-
-                            <div class="col-md-6 mb-2">
-                                <h5>
-                                    Email
-                                </h5>
-                                <input type="email" required name="email" class="form-control">
-                            </div>
-                            <div class="col-md-6 mb-2">
-                                <h5>
-                                    Password
-                                </h5>
-                                <input type="password" name="password" class="form-control">
-                            </div>
-                            <div class="col-md-12">
-                                <button class="btn btn-danger px-5 mt-4" type="submit" style="float:right">Register <i class="fas fa-check-circle"></i></button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-2"></div>
+           </div>
         </div>
     </div>
 </div>

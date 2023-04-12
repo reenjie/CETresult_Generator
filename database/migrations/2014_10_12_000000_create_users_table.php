@@ -17,12 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('fname');
             $table->string('lname');
-            $table->string('mname');
-            $table->string('religion');
-            $table->string('civilstatus');
-            $table->string('gender');
-            $table->date('birthdate');
-            $table->text('address');
+            $table->string('mname');      
             $table->string('contactno');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

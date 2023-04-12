@@ -60,13 +60,8 @@ class UserController extends Controller
         $lname = strtoupper($request->lname);
         $fname = strtoupper($request->fname);
         $mname = strtoupper($request->mname);
-        $religion = strtoupper($request->religion);
-        $gender = strtoupper($request->gender);
-        $civilstatus = strtoupper($request->civilstatus);
-        $Bdate = $request->Bdate;
         $email = $request->email;
         $password = $request->password;
-        $address = strtoupper($request->address);
         $contactno = $request->contactno;
         $econtactno = $request->contactno;
         $ctn = $request->ctn;
@@ -80,11 +75,6 @@ class UserController extends Controller
             'fname' => $fname,
             'lname' => $lname,
             'mname' => $mname,
-            'religion' => $religion,
-            'civilstatus' => $civilstatus,
-            'gender' => $gender,
-            'birthdate' => date('Y-m-d', strtotime($Bdate)),
-            'address' => $address,
             'contactno' => $contactno,
             'email' => $email,
             'email_verified_at' => null,
@@ -104,13 +94,8 @@ class UserController extends Controller
         $lname = strtoupper($request->lname);
         $fname = strtoupper($request->fname);
         $mname = strtoupper($request->mname);
-        $religion = strtoupper($request->religion);
-        $gender = strtoupper($request->gender);
-        $civilstatus = strtoupper($request->civilstatus);
-        $Bdate = $request->Bdate;
         $email = $request->email;
         $password = $request->password;
-        $address = strtoupper($request->address);
         $contactno = $request->contactno;
         $econtactno = $request->contactno;
         $ctn = $request->ctn;
@@ -124,11 +109,6 @@ class UserController extends Controller
                 'fname' => $fname,
                 'lname' => $lname,
                 'mname' => $mname,
-                'religion' => $religion,
-                'civilstatus' => $civilstatus,
-                'gender' => $gender,
-                'birthdate' => date('Y-m-d', strtotime($Bdate)),
-                'address' => $address,
                 'contactno' => $contactno,
             ]);
         } else {
@@ -136,11 +116,6 @@ class UserController extends Controller
                 'fname' => $fname,
                 'lname' => $lname,
                 'mname' => $mname,
-                'religion' => $religion,
-                'civilstatus' => $civilstatus,
-                'gender' => $gender,
-                'birthdate' => date('Y-m-d', strtotime($Bdate)),
-                'address' => $address,
                 'contactno' => $contactno,
                 'password' => Hash::make($password),
 

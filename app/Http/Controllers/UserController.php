@@ -47,7 +47,9 @@ class UserController extends Controller
                 'email' => $email,
                 'email_verified_at' => now(),
                 'password' => Hash::make($pass),
-                'roles' => 0
+                'roles' => 0,
+
+
             ]);
             return redirect()->back()->with('success', 'User Saved Successfully!');
         } catch (\Throwable $th) {
@@ -57,6 +59,8 @@ class UserController extends Controller
 
     public function registerUser(Request $request)
     {
+        try {
+
         $lname = strtoupper($request->lname);
         $fname = strtoupper($request->fname);
         $mname = strtoupper($request->mname);
@@ -82,10 +86,13 @@ class UserController extends Controller
             'roles' => 1
         ]);
 
-        if ($save) {
-            if (Auth::attempt(['email' => $email, 'password' => $password])) {
-                return redirect()->route('dashboard');
+            if ($save) {
+                if (Auth::attempt(['email' => $email, 'password' => $password])) {
+                    return redirect()->route('dashboard');
+                }
             }
+        } catch (\Throwable $th) {
+            return redirect()->route('login');
         }
     }
 

@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('u_requests', function (Blueprint $table) {
+        Schema::create('urequests', function (Blueprint $table) {
             $table->id();
-            $table->integer('userid');
-            $table->integer('request')->comment('0->clearance,1->identification,2->certification');
-            $table->integer('status')->comment('0->pending,1->approved,2->declined');
-            $table->text('purpose')->nullable();
+            $table->integer('userID');
+            $table->string('application');
+            $table->string('year');
+            $table->integer('status')->comment('0->pending , 1->approved , 2 -> declined');
+            $table->date('schedule')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('u_requests');
+        Schema::dropIfExists('urequests');
     }
 };

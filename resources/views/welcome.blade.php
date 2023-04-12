@@ -114,15 +114,21 @@
 
         <!--<a href="pages/passed.php"><i class="fa fa-fw fa-user"></i> 2022 List of Passers</a>-->
         <div class="dropdown">
-            <button class="dropbtn">List of Passers
+            <button class="dropbtn">List of Takers
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="pages/passed.php">School Year 2022-2023</a>
-                <a href="#">School Year 2023-2024</a>
+                @php
+                $years = DB::select('SELECT year, COUNT(appno) AS total FROM listpassers GROUP BY year ');
+                @endphp
+                @foreach($years as $item)
+                <a href="{{route('ViewPass',['Year'=>$item->year])}}" data-toggle="modal" data-target="#view">School Year {{$item->year.' - '.$item->year+1}}</a>
+                @endforeach
             </div>
         </div>
+        <a href="/login"><i class="fa fa-fw fa-share"></i> Request Result</a>
         <a href="/login"><i class="fa fa-fw fa-sign-in"></i> Login</a>
+
     </div>
 
     </div>

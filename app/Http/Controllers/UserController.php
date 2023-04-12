@@ -67,12 +67,7 @@ class UserController extends Controller
         $email = $request->email;
         $password = $request->password;
         $contactno = $request->contactno;
-        $econtactno = $request->contactno;
-        $ctn = $request->ctn;
-        $tin = $request->tin;
-        $gsis = $request->gsis;
-        $sss = $request->sss;
-        $occupation = strtoupper($request->occupation);
+       
 
 
         $save = User::create([
@@ -104,12 +99,7 @@ class UserController extends Controller
         $email = $request->email;
         $password = $request->password;
         $contactno = $request->contactno;
-        $econtactno = $request->contactno;
-        $ctn = $request->ctn;
-        $tin = $request->tin;
-        $gsis = $request->gsis;
-        $sss = $request->sss;
-        $occupation = strtoupper($request->occupation);
+   
 
         if ($password == null) {
             User::where('id', Auth::user()->id)->update([

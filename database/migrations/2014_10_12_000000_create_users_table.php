@@ -23,6 +23,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('roles')->comment('0->admin, 1->user');
+            $table->string('college');
+            $table->string('otp')->comment('0-notverified, 1- verified');
+            $table->string('code')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

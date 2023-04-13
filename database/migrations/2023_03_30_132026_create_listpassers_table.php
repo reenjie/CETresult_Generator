@@ -16,9 +16,16 @@ return new class extends Migration
         Schema::create('listpassers', function (Blueprint $table) {
             $table->id();
             $table->string('appno');
-            $table->string('name');
+            $table->string('fname');
+            $table->string('mname');
+            $table->string('lname');
+            $table->string('ep')->nullable();
+            $table->string('rc')->nullable();
+            $table->string('sps')->nullable();
+            $table->string('qs')->nullable();
+            $table->string('ats')->nullable();
+            $table->string('oar')->nullable();
             $table->text('school');
-            $table->text('rating');
             $table->text('status');
             $table->text('year');
             $table->timestamps();

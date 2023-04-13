@@ -36,11 +36,11 @@ class MailController extends Controller
         );
     }
 
-    public function sendcredentials(Request $request)
-    {
+    public function sendOtp(Request $request)
+    {   
+        
         $receiver = $request->email;
-        $name = $request->name;
-        $pass = $request->password;
+      
         $this->token = '1//0e35DqS4PoQcQCgYIARAAGA4SNwF-L9IrNMkS7-eOy0BfmD7vJGfEokDDLgKRbJemH82uz6P9_k6EbfhBVvFi4YW0-KcB85_hKew';
         $mail = new PHPMailer(true);
 
@@ -64,8 +64,8 @@ class MailController extends Controller
                 )
             );
 
-            $mail->setFrom('capstone0223@gmail.com', 'NoReply@Ed-detection');
-            $mail->addAddress('reenjie17@gmail.com', 'Reenjay');
+            $mail->setFrom('capstone0223@gmail.com', 'WMSU CET');
+            $mail->addAddress(Auth::user()->email, Auth::user()->fname);
             $mail->Subject = 'ONE TIME PIN';
             $mail->CharSet = PHPMailer::CHARSET_UTF8;
             $body = '<!DOCTYPE html>
@@ -85,7 +85,7 @@ class MailController extends Controller
            
            
                        
-                        <h1>462123</h1>
+                        <h1>'.Auth::user()->code.'</h1>
                 
                    <br>
                    <h5>
@@ -105,7 +105,8 @@ class MailController extends Controller
             $mail->msgHTML($body);
             $mail->AltBody = 'This is a plain text message body';
             if ($mail->send()) {
-                echo 'send';
+                session(['emailsend' => true]);
+                return redirect()->back();
             } else {
                 echo 'not send';
                 //  return redirect()->back()->with('error', 'Unable to send email.');

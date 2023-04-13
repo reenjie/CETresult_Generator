@@ -9,5 +9,19 @@ class Listpasser extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['appno', 'name', 'school', 'rating', 'status', 'year'];
+    protected $fillable = [
+        'appno',
+        'fname',
+        'mname',
+        'lname',
+        'ep',
+        'rc',
+        'sps',
+        'qs',
+        'ats',
+        'oar',
+        'school',  
+        'status',
+        'year',
+    ];
 }

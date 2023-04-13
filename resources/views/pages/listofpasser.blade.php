@@ -17,7 +17,9 @@
 
           <th scope="col">No</th>
           <th scope="col">Application No.</th>
-          <th scope="col">Name</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Middle Name</th>
+          <th scope="col">Last Name</th>
           <th scope="col">School</th>
           <th scope="col">Rating</th>
           <th scope="col">Status</th>
@@ -33,14 +35,82 @@
           <td style="cursor:default">{{$key + 1}}</td>
           <td style="cursor:default">{{$item->appno}}</td>
           <td>
-            <textarea name="" style="border:none;" data-table="listpassers" data-entity="name" data-id="{{$item->id}}" class="form-control updateonmove" id="" cols="10" rows="10">{{$item->name}}</textarea>
+            <textarea name="" style="border:none;" data-table="listpassers" data-entity="fname" data-id="{{$item->id}}" class="form-control updateonmove" id="" cols="10" rows="10">{{$item->fname}}</textarea>
+          </td>
+          <td>
+            <textarea name="" style="border:none;" data-table="listpassers" data-entity="mname" data-id="{{$item->id}}" class="form-control updateonmove" id="" cols="10" rows="10">{{$item->mname}}</textarea>
+          </td>
+          <td>
+            <textarea name="" style="border:none;" data-table="listpassers" data-entity="lname" data-id="{{$item->id}}" class="form-control updateonmove" id="" cols="10" rows="10">{{$item->lname}}</textarea>
           </td>
           <td>
             <textarea name="" style="border:none;" data-table="listpassers" data-entity="school" data-id="{{$item->id}}" class="form-control updateonmove" id="" cols="10" rows="10">{{$item->school}}</textarea>
           </td>
-          <td>
-            <textarea name="" style="border:none;" data-table="listpassers" data-entity="rating" data-id="{{$item->id}}" class="form-control updateonmove" id="" cols="10" rows="10">{{$item->rating}}</textarea>
-          </td>
+         <td>
+
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-sm" style="float: right" data-toggle="modal" data-target="#manageratings{{$item->id}}">
+ Manage Ratings
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="manageratings{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Ratings</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       
+    
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> I. English Proficiency
+
+            <br>
+            <input type="number" class="form-control updateonmove" data-table="listpassers" data-entity="ep" data-id="{{$item->id}}" value="{{$item->ep}}">
+          </li>
+          <li class="list-group-item">  II. Reading Comprehension
+            <br>
+            <input type="number" class="form-control updateonmove" data-table="listpassers" data-entity="rc" data-id="{{$item->id}}" value="{{$item->rc}}">
+
+          </li>
+          <li class="list-group-item"> III. Science Process Skills
+            <br>
+            <input type="number" class="form-control updateonmove" data-table="listpassers" data-entity="sps" data-id="{{$item->id}}" value="{{$item->sps}}">
+
+          </li>
+          <li class="list-group-item">IV. Qualitative Skills
+
+            <br>
+            <input type="number" class="form-control updateonmove" data-table="listpassers" data-entity="qs" data-id="{{$item->id}}" value="{{$item->qs}}">
+          </li>
+          <li class="list-group-item">V. Abstract Thinking Skills
+
+            <br>
+            <input type="number" class="form-control updateonmove" data-table="listpassers" data-entity="ats" data-id="{{$item->id}}" value="{{$item->ats}}">
+
+          </li>
+          <li class="list-group-item">Overall Ratings
+
+            <br>
+            <input type="number" class="form-control updateonmove" data-table="listpassers" data-entity="oar" data-id="{{$item->id}}" value="{{$item->oar}}">
+
+          </li>
+        </ul>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+         </td>
           <td>
 
 
@@ -67,7 +137,7 @@
 
 @include('components.modal', [
 'id' =>"addpasser",
-'modalsize' => '',
+'modalsize' => 'modal-lg',
 'modaltitle' => 'Add Passer',
 'type' => 'addpasser',
 ])

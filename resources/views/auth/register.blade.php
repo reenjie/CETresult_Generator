@@ -24,19 +24,19 @@
                         <form action="{{route('registerUser')}}" method="post">
                             @csrf
                             <div class="row">
-                                <div class="col-md-4 mb-2">
+                                <div class="col-md-6 mb-2">
                                     <h5>
                                         Last Name
                                     </h5>
                                     <input type="text mb-2" style="text-transform:uppercase" required name="lname" class="form-control">
                                 </div>
-                                <div class="col-md-4 mb-2">
+                                <div class="col-md-6 mb-2">
                                     <h5>
                                         First Name
                                     </h5>
                                     <input type="text" style="text-transform:uppercase" required name="fname" class="form-control">
                                 </div>
-                                <div class="col-md-4 mb-2">
+                                <div class="col-md-6 mb-2">
                                     <h5>
                                         Middle Name
                                     </h5>
@@ -53,6 +53,13 @@
                                     <input type="text" required name="contactno" class="form-control">
                                 </div>
                                 <div class="col-md-6"></div>
+                                <div class="col-md-12">
+                                  
+                                        <h5>
+                                            College
+                                        </h5>
+                                        <input type="text" name="college" style="text-transform:uppercase" value="" required class="form-control mb-3">
+                                </div>
                                 <div class="col-md-6 mb-2">
                                     <h5>
                                         Email

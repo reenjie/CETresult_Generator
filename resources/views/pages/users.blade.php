@@ -15,12 +15,14 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
+                        <th>Role</th>
+                        <th>Verified_at</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @php
-                    $user = DB::select('select * from users where roles=0 ');
+                    $user = DB::select('select * from users  ');
                     @endphp
                     @foreach ($user as $key => $item)
                     <tr>
@@ -28,6 +30,22 @@
                         <td>{{ $item->fname }}</td>
                         <td>{{ $item->lname }}</td>
                         <td>{{ $item->email }}</td>
+                        <td>
+                       
+                            @switch($item->roles)
+                                @case(0)
+                                    <span class="badge bg-primary">Administrator</span>
+                                    @break
+                                @case(1)
+                                <span class="badge bg-success">Web User</span>
+                                    @break
+                                @default
+                                    
+                            @endswitch
+                        </td>
+                        <td>
+                            {{date('h:i a F j,Y',strtotime($item->email_verified_at))}}
+                        </td>
                         <td>
                             @if (Auth::user()->id == $item->id)
                             <i class="fas fa-id-badge text-primary" style="font-size:20px;"></i>

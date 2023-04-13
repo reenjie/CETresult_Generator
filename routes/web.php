@@ -28,6 +28,8 @@ Route::get('ViewPass', function (Request $request) {
 })->name('ViewPass');
 Route::get('sendSchedule', [App\Http\Controllers\MailController::class, 'sendSchedule'])->name('mail.sendSchedule');
 
+Route::get('sendotp', [App\Http\Controllers\MailController::class, 'sendOtp'])->name('mail.sendOtp');
+
 Route::post('saverequest', [App\Http\Controllers\UrequestController::class, 'saverequest'])->name('saverequest');
 Route::get('changestatus', [App\Http\Controllers\UrequestController::class, 'changestatus'])->name('changestatus');
 Route::post('registerUser', [App\Http\Controllers\UserController::class, 'registerUser'])->name('registerUser');
@@ -36,6 +38,8 @@ Route::get('updateentities', 'App\Http\Controllers\EditController@updateAllWritt
 Route::post('savepasser', [App\Http\Controllers\PasserController::class, 'savepasser'])->name('savePasser');
 Route::post('importlist', [App\Http\Controllers\PasserController::class, 'importlist'])->name('importlist');
 
+Route::get('otp','App\Http\Controllers\UserController@otp')->name('otp');
+Route::post('validateOtp','App\Http\Controllers\UserController@validateOtp')->name('validateOtp');
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('dashboard');
 Route::post('saveuser', 'App\Http\Controllers\UserController@storeadmin')->name('saveuser');
 Route::get('deleteitems', 'App\Http\Controllers\DeleteController@delete')->name('deleteItems');

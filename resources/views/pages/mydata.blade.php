@@ -3,7 +3,7 @@
 <div class="container">
     <div class="mycard">
         <h3>Personal Information</h3>
-        @include('components.alerts')
+        
         <form action="{{route('updatemyaccount')}}" method="post">
             @csrf
             <div class="row">
@@ -26,50 +26,7 @@
                     <input type="text" style="text-transform:uppercase" readonly value="{{Auth::user()->mname}}" required name="mname" class="form-control">
                 </div>
 
-                <div class="col-md-4 mb-2">
-                    <h5>
-                        Religion
-                    </h5>
-                    <input type="text" style="text-transform:uppercase" value="{{Auth::user()->religion}}" required name="religion" class="form-control">
-                </div>
-
-                <div class="col-md-6 mb-2">
-                    <h5>
-                        Gender
-                    </h5>
-                    <select name="gender" readonly style="text-transform:uppercase" required class="form-control" id="">
-                        <option value="{{Auth::user()->gender}}">{{Auth::user()->gender}}</option>
-                        <option value="MALE">Male</option>
-                        <option value="FEMALE">Female</option>
-                    </select>
-                </div>
-                <div class="col-md-6 mb-2">
-                    <h5>
-                        Civil Status
-                    </h5>
-                    <select name="civilstatus" style="text-transform:uppercase" required class="form-control" id="">
-                        <option value="{{Auth::user()->civilstatus}}">{{Auth::user()->civilstatus}}</option>
-                        <option value="Single">Single</option>
-                        <option value="Married">Married</option>
-                        <option value="Widdowed">Widdowed</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6 mb-2">
-                    <h5>
-                        Birth-Date
-                    </h5>
-                    <input type="date" readonly required name="Bdate" value="{{Auth::user()->birthdate}}" class="form-control">
-                </div>
-
-
-
-                <div class="col-md-12 mb-2">
-                    <h5>
-                        Address
-                    </h5>
-                    <textarea name="address" readonly style="text-transform:uppercase" required class="form-control" id="" cols="5" rows="8">{{Auth::user()->address}}</textarea>
-                </div>
+               
 
 
                 <div class="col-md-12 mb-2">
@@ -93,7 +50,7 @@
                     <span style="font-size:13px;color:red">Type here to change your password</span>
                 </div>
 
-
+                <input type="hidden" required name="college" value="{{Auth::user()->college}}" class="form-control">
 
 
                 <div class="col-md-12">

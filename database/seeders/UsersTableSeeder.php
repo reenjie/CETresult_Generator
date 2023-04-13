@@ -24,6 +24,9 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
             'roles' => 0,
+            'college'=>'',
+            'otp' =>1,
+            'code'=>''
 
         ]);
     }

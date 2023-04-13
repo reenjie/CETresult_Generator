@@ -7,7 +7,7 @@ use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Str;
 class UserController extends Controller
 {
     /**
@@ -67,7 +67,8 @@ class UserController extends Controller
         $email = $request->email;
         $password = $request->password;
         $contactno = $request->contactno;
-       
+        $college = $request->college;
+        $otpCode = random_int(100000, 999999);
 
 
         $save = User::create([
@@ -78,7 +79,10 @@ class UserController extends Controller
             'email' => $email,
             'email_verified_at' => null,
             'password' => Hash::make($password),
-            'roles' => 1
+            'roles' => 1 , 
+            'college'=>$college ,
+            'otp'=>0,
+            'code'=>$otpCode
         ]);
 
             if ($save) {
@@ -87,7 +91,8 @@ class UserController extends Controller
                 }
             }
         } catch (\Throwable $th) {
-            return redirect()->route('login');
+            return $th;
+            //return redirect()->route('login');
         }
     }
 
@@ -99,6 +104,8 @@ class UserController extends Controller
         $email = $request->email;
         $password = $request->password;
         $contactno = $request->contactno;
+        $college = $request->college;
+       
    
 
         if ($password == null) {
@@ -107,6 +114,7 @@ class UserController extends Controller
                 'lname' => $lname,
                 'mname' => $mname,
                 'contactno' => $contactno,
+                'college'=>$college
             ]);
         } else {
             User::where('id', Auth::user()->id)->update([
@@ -115,9 +123,36 @@ class UserController extends Controller
                 'mname' => $mname,
                 'contactno' => $contactno,
                 'password' => Hash::make($password),
+                'college'=>$college
 
             ]);
         }
         return redirect()->back()->with('success', 'Changes Saved Successfully!');
+    }
+
+    public function otp(Request $request){
+      
+        if(session()->has('emailsend')){
+            return view('otp');
+        }
+        return redirect()->route('mail.sendOtp');
+    
+    }
+    public function validateOtp(Request $request){
+        $code = $request->code;
+
+        if($code == Auth::user()->code){
+            User::where('id',Auth::user()->id)->update([
+                'email_verified_at'=>date('Y-m-d H:i:s'),
+                'otp'=>1,
+                'code'=>''
+            ]);
+
+            return redirect()->route('dashboard');
+
+        }else {
+            return redirect()->back()->with('error','Invalid Code');
+        }
+        
     }
 }

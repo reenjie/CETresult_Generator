@@ -58,7 +58,14 @@
                                     <h5>
                                         Contact Number
                                     </h5>
-                                    <input type="text" name="contactno" value="xx{{Auth::user()->contactno}}" class="form-control">
+                                    <input type="text" name="contactno" value="{{Auth::user()->contactno}}" class="form-control">
+                                </div>
+
+                                <div class="col-md-6 mb-2 d-none">
+                                    <h5>
+                                        College
+                                    </h5>
+                                    <input type="text" name="contactno" value="{{Auth::user()->college}}" class="form-control">
                                 </div>
         
         

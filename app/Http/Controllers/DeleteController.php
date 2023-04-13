@@ -24,6 +24,9 @@ class DeleteController extends Controller
             case 'myrequest':
                 Urequest::findorFail($request->id)->delete();
                 break;
+            case 'users':
+                User::findorFail($request->id)->delete();
+                break;
         }
         return redirect()->back()->with('success', 'Data deleted Successfully');
     }

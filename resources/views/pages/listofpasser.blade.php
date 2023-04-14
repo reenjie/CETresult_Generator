@@ -8,14 +8,29 @@
 
     <button class="btn btn-danger btn-sm px-3" data-toggle="modal" data-target="#importdata">IMPORT <i class="fas fa-file-import"></i></button>
 
+    <button class="btn btn-primary btn-sm px-3" style="float:right" onclick="window.location.href='{{route('downloadtemplate',['filename'=>'wmsucet_Template.xlsx','template'=>true])}}' ">Download Import Template <i class="fas fa-download"></i></button>
+
     <button class="btn btn-danger btn-sm px-3 btndeleteall">DELETE ALL <i class="fas fa-trash-can"></i></button>
 
     <h6 class="text-danger mt-2 mb-2">If you wish to update fields. just click on the fields you wish to edit</h6>
+
+    <div class="card">
+      <div class="card-body">
+        <h6>Sort By : Year</h6>
+    @php  
+        $yearsav = DB::select('SELECT DISTINCT(year) as allyear from listpassers;');
+    @endphp
+        <a href="{{route('page.index', 'listofpasser')}}" class="btn btn-primary @if(!request()->input('year')) bg-primary text-light  @endif btn-sm px-5">All <i class="fas fa-check-circle"></i></a> 
+    @foreach ($yearsav as $item)
+      <a href="?year={{$item->allyear}}" class="btn btn-primary @if(request()->input('year') == $item->allyear) bg-primary text-light  @endif btn-sm px-5">{{$item->allyear}} <i class="fas fa-share"></i></a> 
+    @endforeach
+      </div>
+    </div>
     <table class="table" id="table1">
       <thead>
         <tr>
 
-          <th scope="col">No</th>
+          <th scope="col">No </th>
           <th scope="col">Application No.</th>
           <th scope="col">First Name</th>
           <th scope="col">Middle Name</th>
@@ -23,12 +38,18 @@
           <th scope="col">School</th>
           <th scope="col">Rating</th>
           <th scope="col">Status</th>
+          <th scope="col">Year</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         @php
-        $ListofPasser = DB::select('SELECT * FROM `listpassers`');
+        if(request()->input('year')){
+          $ListofPasser = DB::select('SELECT * FROM `listpassers` where year='.request()->input('year').' ');
+        }else {
+          $ListofPasser = DB::select('SELECT * FROM `listpassers`');
+        }
+        
         @endphp
         @foreach ($ListofPasser as $key => $item)
         <tr>
@@ -119,6 +140,9 @@
               <option value="passed">passed</option>
               <option value="failed">failed</option>
             </select>
+          </td>
+          <td>
+            {{$item->year}}
           </td>
           <td>
 

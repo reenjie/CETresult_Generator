@@ -17,9 +17,81 @@
 
         </h4>
 
-        <h1 style="text-align:center">{{$item->rating}}%
+        <h1 style="text-align:center">{{$item->oar}}%
             <br>
-            <span style="font-size:17px">RATING</span>
+            <span style="font-size:17px">OVERALL RATING</span>
+            <div id="accordion">
+               
+                
+                    <h5 class="mb-0">
+                      <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        See Ratings
+                      </button>
+                    </h5>
+                 
+              
+                  <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        <h6>
+                         <div class="row">
+                            <div class="col-md-4">
+                               
+                                <div class="card">
+                                    <div class="card-body">
+                                        I. English Proficiency
+                                        <hr>
+                                        {{$item->ep}}%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                               
+                                <div class="card">
+                                    <div class="card-body">
+                                        II. Reading Comprehension
+                                        <hr>
+                                        {{$item->rc}}%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                               
+                                <div class="card">
+                                    <div class="card-body">
+                                        III. Science Process Skills
+                                        <hr>
+                                        {{$item->sps}}%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                               
+                                <div class="card">
+                                    <div class="card-body">
+                                        IV. Qualitative Skills
+                                        <hr>
+                                        {{$item->qs}}%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                               
+                                <div class="card">
+                                    <div class="card-body">
+                                        V. Abstract Thinking Skills
+                                        <hr>
+                                        {{$item->ats}}%
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                        </h6>
+
+                    </div>
+                  </div>
+               
+              
+              </div>
             <hr>
             @if($item->status == "passed")
             <h3 style="text-align: center;color:#609966">PASSED <i class="fas fa-check-circle"></i></h3>

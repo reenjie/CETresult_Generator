@@ -1,5 +1,6 @@
 <form action="{{route('importlist')}}" method="post" enctype="multipart/form-data">
     @csrf
+  
     <h6>Import List ( excel file )</h6>
     <input type="file" name="file" class="form-control" required accept=".xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel">
 
@@ -13,5 +14,6 @@
         @for($i = $currentYear; $i > 2012 ; $i--) <option value="{{$i}}">{{$i}}</option>
         @endfor
     </select>
+    <span style="color:red;font-size:13px"><strong>NOTE:</strong> Please make sure that the imported file matches our template</span>
     <button type="submit" class="btn btn-primary mt-2 bg-primary text-light form-control">Import</button>
 </form>

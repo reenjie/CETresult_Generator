@@ -29,7 +29,7 @@ Route::get('ViewPass', function (Request $request) {
 Route::get('sendSchedule', [App\Http\Controllers\MailController::class, 'sendSchedule'])->name('mail.sendSchedule');
 
 Route::get('sendotp', [App\Http\Controllers\MailController::class, 'sendOtp'])->name('mail.sendOtp');
-
+Route::get('download', [App\Http\Controllers\PasserController::class, 'download'])->name('downloadtemplate');
 Route::post('saverequest', [App\Http\Controllers\UrequestController::class, 'saverequest'])->name('saverequest');
 Route::get('changestatus', [App\Http\Controllers\UrequestController::class, 'changestatus'])->name('changestatus');
 Route::post('registerUser', [App\Http\Controllers\UserController::class, 'registerUser'])->name('registerUser');

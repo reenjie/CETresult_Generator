@@ -36,7 +36,7 @@
                             <h6>{{$item->application}} | </h6>
 
                             @php
-                            $validate = DB::select('SELECT * FROM `listpassers` where appno = "'.$item->application.'" and year = "'.$item->year.'" and name like "%'.$user[0]->fname.'%" or name like "%'.$user[0]->lname.'%" ');
+                            $validate = DB::select('SELECT * FROM `listpassers` where appno = "'.$item->application.'" and year = "'.$item->year.'" and fname like "%'.$user[0]->fname.'%" or lname like "%'.$user[0]->lname.'%" ');
                             @endphp
 
                             @if(count($validate))

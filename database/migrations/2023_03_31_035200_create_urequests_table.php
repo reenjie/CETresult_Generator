@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('application');
             $table->string('year');
             $table->integer('status')->comment('0->pending , 1->approved , 2 -> declined');
-            $table->date('schedule')->nullable();
+            $table->dateTime('schedule')->nullable();
             $table->timestamps();
         });
     }

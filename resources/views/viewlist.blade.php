@@ -76,7 +76,7 @@
                                     <td style="cursor:default">{{$key + 1}}</td>
                                     <td style="cursor:default">{{$item->appno}}</td>
                                     <td>
-                                        {{$item->name}}
+                                        {{$item->lname.','.$item->fname.' '.$item->mname}}
                                     <td>
                                         {{$item->school}}
                                     </td>

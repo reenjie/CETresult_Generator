@@ -164,7 +164,7 @@ class MailController extends Controller
            
            
                    <h1 style="font-weight:normal">Hi  ' . $username . '!</h1>
-                   <h2 style="font-weight:normal">Your Result of WMSU CET (Western Mindanao State University College Entrance Test) is available for claiming <br/> at the set Schedule : <br/> ' . date('F j,Y', strtotime($schedule)) . '  <br/> Please proceed at the Research Center at WMSU on the mention date.</h2>
+                   <h2 style="font-weight:normal">Your Result of WMSU CET (Western Mindanao State University College Entrance Test) is available for claiming <br/> at the set Schedule : <br/> ' . date('h:ia  F j,Y', strtotime($schedule)) . '  <br/> Please proceed at the Research Center at WMSU on the mention date.</h2>
         
                    <br>
                    <h3>To check your results, you can log in to our official web-app using the account where you submitted your request. <br/> Once logged in, you should be able to view your results from there.</h3>   

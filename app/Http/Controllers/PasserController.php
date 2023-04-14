@@ -144,7 +144,7 @@ class PasserController extends Controller
                     //   return redirect()->back()->with('error', 'Theres a problem with importing , Some files were imported some were not. \n Please follow the right format of a file. \n Example : \n Application no | Name | School | Ratings | Status');
                     // }
 
-                    $check = Listpasser::where('appno', $appno);
+                     $check = Listpasser::where('appno', $appno)->where('year',$year);
 
                     if (count($check->get()) >= 1) {
                     } else {
